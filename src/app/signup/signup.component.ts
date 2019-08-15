@@ -17,7 +17,7 @@ export class SignupComponent implements OnInit {
 
     this.checkoutForm = this.formBuilder.group({
       name: ['', Validators.required],
-      phone: [ '', Validators.pattern(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/)],
+      phone: [ '',Validators.pattern(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/)],
       email: ['', Validators.required]
     });
 
