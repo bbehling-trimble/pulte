@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators  } from '@angular/forms';
+import {AppComponentService} from '../app.component.service';
 
 @Component({
   selector: 'app-signup',
@@ -12,7 +13,7 @@ export class SignupComponent implements OnInit {
   formSubmitted;
   private stepCounter = 0;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private appComponentService: AppComponentService) {
 
     this.checkoutForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -34,6 +35,7 @@ export class SignupComponent implements OnInit {
     // Process checkout data here
     console.warn('Your order has been submitted', customerData);
 
+    this.appComponentService.submitSignup(customerData);
     //this.items = this.cartService.clearCart();
     this.checkoutForm.reset();
     this.formSubmitted = true;

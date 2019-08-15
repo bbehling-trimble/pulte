@@ -12,4 +12,9 @@ export class AppComponentService {
   public getFeatures(){
      return this.http.get('https://localhost:5001/api/todo');
   }
+
+  public submitSignup(data){
+    debugger;
+    this.http.post('https://jsonplaceholder.typicode.com/posts', data).subscribe();
+ }
 }
