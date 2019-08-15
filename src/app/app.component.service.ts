@@ -14,7 +14,6 @@ export class AppComponentService {
   }
 
   public submitSignup(data){
-    debugger;
     this.http.post('https://jsonplaceholder.typicode.com/posts', data).subscribe();
  }
 }
